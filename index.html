@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <style>
+    :root {
+      font-size: 16px;
+      font-family: "Karla", system-ui, sans-serif;
+      --clr-cyan: 179 62% 43%;
+      --clr-bright-yellow: 71 73% 54%;
+      --clr-light-gray: 204 43% 93%;
+      --clr-grayish-blue: 218 22% 67%;
+    }
+
+    *,
+    ::before,
+    ::after {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+      font-synthesis: none;
+    }
+
+    body {
+      background-color: hsl(var(--clr-light-gray));
+    }
+
+    .sr-only {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    section {
+      max-width: 700px;
+      width: 95%;
+
+      margin-inline: auto;
+
+      grid-template-columns: 1fr;
+
+      box-shadow: 0 4px 12px hsl(0 0% 0% / 0.075);
+      border-radius: 0.5rem;
+
+      overflow: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-bottom: 1.5rem;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+
+    .card {
+      --_clr: var(--clr-cyan);
+      --_bg-clr: 0 0% 100%;
+      padding: 1.5rem;
+      color: hsl(var(--_clr) / var(--_text-opacity, 1));
+      background-color: hsl(var(--_bg-clr) / var(--_bg-opacity, 1));
+    }
+
+    @media only screen and (min-width: 560px) {
+      section {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .span-two-cols {
+        grid-column: span 2;
+      }
+
+      .card {
+        padding: 3rem;
+      }
+    }
+
+    .card.reverse {
+      --_clr: var(--clr-light-gray);
+      --_bg-clr: var(--clr-cyan);
+    }
+
+    .text-yellow {
+      color: hsl(var(--clr-bright-yellow));
+    }
+
+    p {
+      margin-block: 1rem;
+    }
+
+    .big {
+      font-size: 200%;
+    }
+
+    .text-light {
+      color: hsl(var(--clr-light-gray) / 0.75);
+    }
+
+    button {
+      border: 0;
+      background-color: transparent;
+      color: inherit;
+      font-size: 1.075rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 1rem;
+
+      background-color: hsl(var(--clr-bright-yellow));
+      color: hsl(var(--clr-light-gray));
+
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px hsl(0 0% 0% / 0.075);
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      margin-block: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <section class="grid">
+      <h1 class="sr-only">Section of cta</h1>
+
+      <div class="card span-two-cols">
+        <h2>
+          <strong>Join our community</strong>
+        </h2>
+
+        <p class="text-yellow" style="font-size: 1.175rem;">
+          <strong>
+            30-day, hassle-free money back guarantee
+          </strong>
+        </p>
+
+        <p style="max-width: 35rem;">
+          Gain access to our full library of tutorials along with expert code reviews.
+          Perfect for any developers who are serious about honing their skills.
+        </p>
+      </div>
+
+      <div class="card reverse">
+        <h3>
+          <strong>Monthly Subscription</strong>
+        </h3>
+
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div class="big">
+            <strong>
+              &dollar;29
+            </strong>
+          </div>
+          <div class="text-light">
+            per month
+          </div>
+        </div>
+        <p> Full access for less than &dollar;1 a day</p>
+
+        <button type="button" class="primary-btn" style="margin-top: 1rem;">
+          Sign Up
+        </button>
+      </div>
+
+      <div class="card reverse" style="--_bg-opacity: 0.87;">
+        <h3>
+          <strong>Why Us</strong>
+        </h3>
+
+        <ul>
+          <li>Tutorials by industry experts</li>
+          <li>Peer &amp; expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+
+</html>
